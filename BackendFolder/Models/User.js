@@ -15,48 +15,45 @@ const UserSchema=new Schema({
     },
     avtar:{
         type:"String",
-        required:true
+        // required:true
     },
     isAdmin:{
         type:"Boolean",
-        required:true
+        // required:true
     },
-    // created:{
-    //     type:"Date",
-    //     required:true
-    // },
+   
     Address:{
         flat:{
             type:"String",
-            required:true
+            // required:true
         },
         Street:{
             type:"String",
-            requird:true
+            // requird:true
         },
         landmark:{
             type:"String",
-            required:true
+            // required:true
         },
         city:{
             type:"String",
-            required:true
+            // required:true
         },
         State:{
             type:"String",
-            required:true
+            // required:true
         },
         country:{
             type:"String",
-            required:true
+            // required:true
         },
         pin:{
             type:"Number",
-            required:true
+            // required:true
         },
         mobile:{
             type:"Number",
-            required:true
+            // required:true
         },
     }
 

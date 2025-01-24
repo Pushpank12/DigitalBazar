@@ -4,7 +4,7 @@ const dotEnv=require('dotenv')
 const path=require('path')
 const mongoose=require("mongoose");
 const cors = require('cors')
-const multer  = require('multer')
+// const multer  = require('multer')
 
 // configure cors
 app.use(cors());
@@ -14,7 +14,7 @@ app.use(express.json())
 
 
 
-app.use(express.multer())
+// app.use(express.multer())
 
 
 // configure of .env
@@ -38,15 +38,7 @@ mongoose.connect(process.env.MONGO_DB_LOCAL_URL).then((response)=>{
 })
 
 
-// main().then(()=>{
-//     console.log("connected to mongodb");
-// }).catch((err)=>{
-//     console.log(err);
-// })
-// async function main() {
-//     await mongoose.connect('mongodb://127.0.0.1:27017/BRAINS-KART-03-RCJS-EVNG');
-  
-//   }
+
 
 
 
@@ -56,14 +48,15 @@ app.get('/',(req,res)=>{
 })
 
 
+// to upload kids collections
+// app.use('/api/create/kids',require('./Router/kids_ProductRouter'))
 
-
-// connection of our api 
+// connection of our api  for registraions 
 app.use('/api/users',require('./Router/router'))
 
 
-// app.use('api/client',)
 
+// app.use('api/client',)
 
 
 app.listen(port,hostname,()=>{

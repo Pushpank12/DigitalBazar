@@ -33,10 +33,10 @@ const ProductSchema=new Schema({
         type:"String",
         required:true
     },
-    created:{
-        type:"Date",
-        required:true
-    }
-});
+    // created:{
+    //     type:"Date",
+    //     required:true
+    // }
+},{timestamps:true});
 const Product=mongoose.model("Product",ProductSchema);
 module.exports=Product

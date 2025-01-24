@@ -7,6 +7,7 @@ import "./App.css";
 import Home from "./modules/layout/components/home/Home";
 import NavbarRB from "./modules/layout/components/navbar/NavbarRB";
 import FOOTERM from "./modules/layout/components/footer/FOOTERM";
+import Registration  from './modules/users/components/register/Registrtion'
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <NavbarRB />
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/registration" element={<Registration />}></Route>
             {/* <Route path='/cart' element={<Cart/>}></Route>  */}
           </Routes>
           <FOOTERM />

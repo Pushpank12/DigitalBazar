@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -14,3 +14,56 @@ body {
   padding: 0;
   
 }
+ */
+
+
+
+
+#cardcolor{
+
+  color: rgba(245, 227, 158, 0.838);
+  background: linear-gradient(to right,
+  rgb(37, 46, 53),
+  rgb(36, 46, 61),
+  rgb(49, 63, 74))
+
+
+}
+
+
+.warmlight{
+background-color: rgb(249, 218, 176);
+
+}
+
+.box{
+   
+  background-color: white;
+  width:156px;
+  margin: auto;
+  height: 33.5px;
+ 
+}
+.boxinside{
+  padding: 1px;
+  color:white;
+  background: linear-gradient(to right,
+  rgb(37, 46, 53),
+  rgb(36, 46, 61),
+  rgb(49, 63, 74));
+  font-size: 23px;
+  
+}
+
+.is-form-valid {
+  border: 1px solid lime;
+  border-left: 15px  solid lime;
+  box-shadow: 0 0 5px lime;
+}
+
+.is-form-invalid {
+  border: 1px solid orangered;
+  border-left: 15px solid orangered;
+  box-shadow: 0 0 5px orangered;
+}
+
