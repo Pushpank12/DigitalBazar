@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import dbLogo from "./icons/dbLogo.svg";
+import {Link} from 'react-router-dom'
 function NavbarRB() {
   return (
     <React.Fragment>
@@ -27,9 +28,9 @@ function NavbarRB() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/men">Men's Wear</Nav.Link>
-              <Nav.Link href="/kids">Kids Wear</Nav.Link>
-              <Nav.Link href="/women">Women's Wear</Nav.Link>
+              <Nav.Link href="/mencollection">Men's Wear</Nav.Link>
+              <Nav.Link href="/kidscollection">Kids Wear</Nav.Link>
+              <Nav.Link href="/womenscollection">Women's Wear</Nav.Link>
 
               <NavDropdown title="Cart" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/cart">View</NavDropdown.Item>

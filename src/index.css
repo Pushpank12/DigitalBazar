@@ -67,3 +67,36 @@ background-color: rgb(249, 218, 176);
   box-shadow: 0 0 5px orangered;
 }
 
+
+
+
+.text-color{
+
+    color:rgb(15, 215, 121)
+}
+
+
+.header-bg{
+  padding: 20px;
+  background-color:rgba(223,193,143,255)
+}
+
+
+
+.cardAlgin{
+
+  display: flex;
+  justify-content: space-around;
+  
+  }
+
+
+
+ .cardBox{
+margin: auto;
+  background-color: rgb(228, 230, 231);
+ border: 0.5px solid black;
+ width: 200px;
+ height:130px ;
+ } 
+  

@@ -49,7 +49,7 @@ app.get('/',(req,res)=>{
 
 
 // to upload kids collections
-// app.use('/api/create/kids',require('./Router/kids_ProductRouter'))
+app.use('/api/create',require('./Router/kids_ProductRouter'))
 
 // connection of our api  for registraions 
 app.use('/api/users',require('./Router/router'))
