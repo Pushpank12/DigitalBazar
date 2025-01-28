@@ -18,7 +18,7 @@ const { body, validationResult } = require('express-validator')
 //  @accss:Public
 //  @url: http://127.0.0.1:5000/api/create/kids-products
 
-router.get('/kids-products', async (request, response) => {
+router.get('/kids-products',async (request, response) => {
     try {
         let product = await Product.find();
         response.status(200).json({ product })

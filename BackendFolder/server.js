@@ -40,7 +40,19 @@ mongoose.connect(process.env.MONGO_DB_LOCAL_URL).then((response)=>{
 
 
 
+// middleware function
+const logRequest=(request,response,next)=>{
+    console.log(`${new Date().toLocaleString()} Request made to: ${request.originalUrl}`);
+    next();  // move to next phase 
 
+
+
+}
+
+
+
+// applying  middleware to all routes
+app.use(logRequest);
 
 // simple request
 app.get('/',(req,res)=>{

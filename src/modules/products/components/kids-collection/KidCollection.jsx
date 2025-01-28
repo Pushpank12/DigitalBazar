@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const KidCollection = () => {
+    
 
     let [KidsCollection, setKidsCollection] = useState([])
 
