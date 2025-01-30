@@ -1,0 +1,14 @@
+.Link{
+    text-decoration: none;
+    color :aliceblue ;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 600;
+    
+}
+.Link:hover{
+    text-decoration: none;
+}

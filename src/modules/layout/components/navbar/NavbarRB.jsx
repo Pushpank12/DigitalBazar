@@ -4,6 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import dbLogo from "./icons/dbLogo.svg";
+import {Link} from "react-router-dom"
+import "./NavbarRB.css";
 function NavbarRB() {
   return (
     <React.Fragment>
@@ -14,7 +16,7 @@ function NavbarRB() {
         className="bg-body-dark sticky-top"
       >
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand className="Link d-flex align-items-center" as={Link} to='/'>
             <img
               alt=""
               src={dbLogo}
@@ -22,28 +24,29 @@ function NavbarRB() {
               height="30"
               className="d-inline-block align-top"
             />{" "}
-            DigitalBazar
+             DigitalBazar
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/men">Men's Wear</Nav.Link>
-              <Nav.Link href="/kids">Kids Wear</Nav.Link>
-              <Nav.Link href="/women">Women's Wear</Nav.Link>
+            <Nav className="me-auto d-flex align-items-center">
+              <Link className="Link" to="/men">Men's Wear</Link>
+              <Link className="Link" to="/kids">Kids Wear</Link>
+              <Link className="Link" to="/women">Women's Wear</Link>
 
-              <NavDropdown title="Cart" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/cart">View</NavDropdown.Item>
-                <NavDropdown.Item href="/wishlist">Wishlist</NavDropdown.Item>
+             <NavDropdown className="Link d-flex align-items-center" title="Cart" id="basic-nav-dropdown">
+                <NavDropdown.Item  as={Link} to={'/cart'}>View</NavDropdown.Item>
+                <NavDropdown.Item  as={Link} to={'/wishlist'}>Wishlist</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/checkout">Checkout</NavDropdown.Item>
+                <NavDropdown.Item  as={Link} to={'/checkout'}>Checkout</NavDropdown.Item>
               </NavDropdown>
+              
             </Nav>
 
             <Nav>
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link eventKey={2} href="/profile">
+              <Link className="Link" to="/login">Login</Link>
+              <Link className="Link" eventKey={2} to="/profile">
                 Account
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

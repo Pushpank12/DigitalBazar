@@ -7,17 +7,28 @@ import "./App.css";
 import Home from "./modules/layout/components/home/Home";
 import NavbarRB from "./modules/layout/components/navbar/NavbarRB";
 import FOOTERM from "./modules/layout/components/footer/FOOTERM";
+import Login from "./modules/users/components/login/Login";
+import ErrorPage from "./modules/users/components/ErrorPage/ErrorPage";
 function App() {
   return (
     <>
       <BrowserRouter>
         <div className="App">
-          <NavbarRB />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            {/* <Route path='/cart' element={<Cart/>}></Route>  */}
+            <Route path="/" element={<NavbarRB />} />
           </Routes>
-          <FOOTERM />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<FOOTERM />} />
+          </Routes>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          <Routes>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
         </div>
       </BrowserRouter>
     </>
