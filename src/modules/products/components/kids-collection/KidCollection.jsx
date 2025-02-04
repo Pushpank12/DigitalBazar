@@ -1,41 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
+import {useDispatch, useSelector} from "react-redux"
+import {getkidProduct} from "../../../../redux/feature/KidCollection.feature"
 
 const KidCollection = () => {
-    
 
-    let [KidsCollection, setKidsCollection] = useState([])
+    let dispatch= useDispatch()
+    let result = useSelector((state)=>
+    {
+        return state['KidsCollection']
+    })
 
+    let {loading,KidsCollection,errorMessage}=result
 
-    let kidsCollectionfetched = async () => {
+    // console.log(result, 'kids collections')
 
-        try {
-            let url = 'http://127.0.0.1:5000/api/create/kids-products'
+    useEffect(()=>{
+        dispatch(getkidProduct())
+    },[dispatch])
 
-            let response = await axios.get(url);
-
-            setKidsCollection(response.data.product)
-        } catch (error) {
-            console.log("error is ", error)
-        }
-    }
-
-
-
-
-    useEffect(() => {
-
-        kidsCollectionfetched()
-
-    }, [])
-
-
-
-
-
-
-    return (
+   return (
         <>
+        {loading && <h2 className='fw-bold'>...Loading</h2>}
+        { !loading && errorMessage && <h3 className='text-danger'>{errorMessage}</h3>}
+        {
+            !loading && KidsCollection.length > 0 &&
+            <>
+
             {/* <pre>{JSON.stringify(KidsCollection)}</pre> */}
             <h1 className='header-bg '>Kids-collections</h1>
             <div className='m-3'>
@@ -44,18 +34,18 @@ const KidCollection = () => {
 
             </div>
 
-          
-
-                            <div className='container '>
-                                <div className='row  '>
-                                    <div className='cardAlgin'>
-  {
-                KidsCollection.map((product) => {
 
 
+            <div className='container '>
+                <div className='row  '>
+                    <div className='cardAlgin'>
+                        {
+                            KidsCollection.map((product) => {
 
-                    return (
-                        <>
+ 
+
+                                return (
+                                    <>
 
                                         <div className='col-md-3'>
                                             <div className='card  '>
@@ -66,36 +56,37 @@ const KidCollection = () => {
                                                 </div>
                                                 <div className='card-body  text-center'>
                                                     <div className='cardBox'>
-                                                    <p>{product.name}</p>
-                                                    <p>{product.price}</p>
+                                                        <p>{product.name}</p>
+                                                        <p>{product.price}</p>
 
-                                                    <button className='btn btn-outline-black' id='cardcolor'>Add to cart</button>
+                                                        <button className='btn btn-outline-black' id='cardcolor'>Add to cart</button>
 
                                                     </div>
 
-                                                   
+
                                                 </div>
 
 
-                                                
-                                         
-                                                </div>
-                                                </div>                      
-                                         
-                        </>)
-                })
-            }
 
 
-                                         
-                                     
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
+
+                                    </>)
+                            })
+                        }
 
 
-                            </div>
 
 
+                    </div>
+                </div>
+
+
+            </div>
+ </>
+
+          }
         </>
     );
 }
